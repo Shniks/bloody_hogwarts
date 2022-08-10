@@ -43,7 +43,6 @@ RSpec.describe 'When I visit students path' do
 
       visit '/students'
 
-
       expect(student_1.name).to appear_before(student_2.name)
       expect(student_3.name).to appear_before(student_1.name)
     end

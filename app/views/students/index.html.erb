@@ -1,10 +1,12 @@
 <h1> List of Students </h1>
 
+<% j = 1 %>
 <% @students.each do |student| %>
-  <div class = 'student_<%= student.id %>'>
+  <div class = 'student_<%= j %>'>
     <li>Name: <%= student.name %></li>
     <li>Age: <%= student.age %></li>
     <li>House: <%= student.house %></li>
+    <% j += 1 %>
   </div><br/>
 <% end %>
 

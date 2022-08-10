@@ -3,5 +3,9 @@ class Student < ApplicationRecord
   has_many :courses, through: :student_courses
 
   validates_presence_of :name, :age, :house
-  
+
+  def self.average_age
+    average(:age)
+  end
+
 end

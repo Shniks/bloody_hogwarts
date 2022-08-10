@@ -4,6 +4,9 @@
 <% @courses.each do |course| %>
   <div class = 'course_<%= j %>'>
     <li><%= course.name %>: <%= course.student_count %></li>
+          <% course.students.each do |student| %>
+             - <%= student.name %><br/>
+          <% end %>
     <% j += 1 %>
   </div><br/>
 <% end %>

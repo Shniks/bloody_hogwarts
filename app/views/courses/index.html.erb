@@ -1,0 +1,7 @@
+<h1> List of Courses </h1>
+
+<% @courses.each do |course| %>
+  <div class = 'course_<%= course.id %>'>
+    <li><%= course.name %>: <%= course.students.count %></li>
+  </div><br/>
+<% end %>

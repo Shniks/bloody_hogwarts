@@ -19,8 +19,13 @@ RSpec.describe 'When I visit a student show page' do
 
     visit "/students/#{student_1.id}"
 
-    expect(page).to have_content("Name: Rando #{i}")
-    expect(page).to have_content("Age: #{i}")
-    expect(page).to have_content("House: House #{i}")
+    expect(page).to have_content("Defense against the Dark Arts")
+    expect(page).to have_content("Potions")
+    expect(page).to have_content("Flying High")
+
+    visit "/students/#{student_2.id}"
+
+    expect(page).to have_content("Herbology")
+    expect(page).to have_content("Potions")
   end
 end

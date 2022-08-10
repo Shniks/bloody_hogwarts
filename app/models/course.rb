@@ -4,8 +4,12 @@ class Course < ApplicationRecord
 
   validates_presence_of :name
 
+  def student_count
+    students.count
+  end
+
   def self.alphabetical
     order(:name)
-  end 
+  end
 
 end

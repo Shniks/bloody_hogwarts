@@ -1,4 +1,10 @@
-# Bloody Hogwarts
+---
+Project Title: Bloody Hogwarts
+Author: Nikhil Shahi
+Date: August 10, 2022
+Test Framework: RSpec
+Test Coverage: 100%
+---
 
 This Rails application is intended to be used as an opportunity for students to measure their own learning from week 2 of module 2 of the back-end program of the Turing School of Software & Design.
 

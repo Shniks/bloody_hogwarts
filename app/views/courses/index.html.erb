@@ -4,7 +4,7 @@
 <% @courses.each do |course| %>
   <div class = 'course_<%= j %>'>
     <h3><%= course.name %>: <%= course.student_count %></h3>
-          <% course.students.each do |student| %>
+          <% course.students.alphabetical.each do |student| %>
              - <%= student.name %><br/>
           <% end %>
     <% j += 1 %>

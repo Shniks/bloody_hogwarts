@@ -28,4 +28,5 @@ RSpec.describe 'When I visit a student show page' do
     expect(page).to have_content("Herbology")
     expect(page).to have_content("Potions")
   end
+  
 end

@@ -33,6 +33,12 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
+RSpec::Matchers.define :appear_before do |later_content|
+  match do |earlier_content|
+    page.body.index(earlier_content) < page.body.index(later_content)
+  end
+end
+
 DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|

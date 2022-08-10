@@ -44,6 +44,13 @@ RSpec.describe 'When I visit the courses index' do
 
     visit '/courses'
 
+    (1..3).each do |i|
+      within ".course_#{i}" do
+        course = Course.alphabetical[i-1]
+        expect(page).to have_content("#{course.name}")
+      end
+    end
+
     expect(course_3.name).to appear_before(course_1.name)
     expect(course_3.name).to appear_before(course_2.name)
     expect(course_2.name).to appear_before(course_1.name)

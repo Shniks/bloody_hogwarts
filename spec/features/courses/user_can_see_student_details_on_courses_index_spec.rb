@@ -19,7 +19,7 @@ RSpec.describe 'When I visit the courses index' do
 
     visit "/courses"
 
-    expect(page).to have_content("Defense against the Dark Arts": 3)
-    expect(page).to have_content("Herbology": 2)
+    expect(page).to have_content("Defense against the Dark Arts: 3")
+    expect(page).to have_content("Herbology: 2")
   end
 end

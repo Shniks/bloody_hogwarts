@@ -3,7 +3,7 @@
 <% j = 1 %>
 <% @courses.each do |course| %>
   <div class = 'course_<%= j %>'>
-    <li><%= course.name %>: <%= course.students.count %></li>
+    <li><%= course.name %>: <%= course.student_count %></li>
     <% j += 1 %>
   </div><br/>
 <% end %>

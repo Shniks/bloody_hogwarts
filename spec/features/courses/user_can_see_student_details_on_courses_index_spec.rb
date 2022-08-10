@@ -34,20 +34,20 @@ RSpec.describe 'When I visit the courses index' do
     course_2 = Course.create!(name: "Herbology")
     course_3 = Course.create!(name: "Defense against the Dark Arts")
 
-    StudentCourse.create!(student_id: student_1.id, course_id: course_1.id)
-    StudentCourse.create!(student_id: student_2.id, course_id: course_1.id)
-    StudentCourse.create!(student_id: student_4.id, course_id: course_1.id)
-    StudentCourse.create!(student_id: student_2.id, course_id: course_2.id)
-    StudentCourse.create!(student_id: student_3.id, course_id: course_2.id)
-    StudentCourse.create!(student_id: student_3.id, course_id: course_3.id)
-    StudentCourse.create!(student_id: student_4.id, course_id: course_3.id)
+    student_1.courses << course_1
+    student_2.courses << course_1
+    student_2.courses << course_2
+    student_3.courses << course_2
+    student_3.courses << course_3
+    student_4.courses << course_1
+    student_4.courses << course_3
 
     visit '/courses'
-
+  
     (1..3).each do |i|
       within ".course_#{i}" do
         course = Course.alphabetical[i-1]
-        expect(page).to have_content("#{course.name}")
+        expect(page).to have_content("#{course.name}: #{course.student_count}")
       end
     end
 

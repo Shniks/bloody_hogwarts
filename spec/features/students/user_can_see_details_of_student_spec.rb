@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'When I visit students path' do
+  
   describe 'I see a list of students' do
     it 'I can see the name, age and house of each student' do
 
@@ -32,4 +33,5 @@ RSpec.describe 'When I visit students path' do
       expect(page).to have_content("Average Age: #{average_age}")
     end
   end
+
 end

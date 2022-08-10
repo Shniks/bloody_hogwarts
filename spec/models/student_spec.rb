@@ -13,4 +13,14 @@ RSpec.describe Student, type: :model do
     it {should have_many(:courses).through(:student_courses)}
   end
 
+  it 'can compute average age of students' do
+    (1..10).each do |i|
+      Student.create!(name: "Rando #{i}", age: i, house: "House #{i}")
+    end
+
+    average_age = Student.all.average(:age)
+
+    expect(Student.average_age).to eq(average_age)
+  end
+
 end

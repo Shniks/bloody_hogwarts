@@ -22,7 +22,6 @@ RSpec.describe 'When I visit students path' do
 
     it 'I can see the average age of all students' do
 
-      age = []
       (1..10).each do |i|
         Student.create!(name: "Rando #{i}", age: "#{rand(18..35)}", house: "House #{i}")
       end
